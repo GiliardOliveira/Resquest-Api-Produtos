@@ -7,9 +7,9 @@
 
     <mat-nav-list>
       <a mat-list-item routerLink="/cadastrarproduto" (click)="drawer.toggle()">Cadastrar Produto</a>
-      <a mat-list-item routerLink="/visualizarprodutos" (click)="drawer.toggle()">Editar</a>
-      <a mat-list-item href="#">Apagar</a>
       <a mat-list-item routerLink="/visualizarprodutos" (click)="drawer.toggle()">Visualizar</a>
+      <a mat-list-item routerLink="" (click)="drawer.toggle()">Editar</a>
+   
     </mat-nav-list>
 
   </mat-sidenav>
@@ -24,10 +24,13 @@
       </button>
 
       <span>Menu</span>
-      
+
     </mat-toolbar>
     <!-- Add Content Here -->
-    <ng-content></ng-content>
+
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
 
   </mat-sidenav-content>
 </mat-sidenav-container>

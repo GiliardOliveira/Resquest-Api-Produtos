@@ -25,6 +25,8 @@ import { MatListModule } from '@angular/material/list';
 import { VisualizarprodutosComponent } from './componentes/visualizarprodutos/visualizarprodutos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './services/data.service';
+import {MatTableModule} from '@angular/material/table';
+
 
 
 
@@ -54,7 +56,8 @@ import { DataService } from './services/data.service';
     MatMenuModule,
     LayoutModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatTableModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent],

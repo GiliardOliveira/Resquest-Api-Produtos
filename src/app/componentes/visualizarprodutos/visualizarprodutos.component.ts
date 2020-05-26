@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Produto } from 'src/app/produto.model';
 import { DataService } from 'src/app/services/data.service';
+import { MatTableDataSource } from '@angular/material/table';
+import { SelectionModel } from '@angular/cdk/collections';
 
 
 @Component({
@@ -8,19 +10,27 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './visualizarprodutos.component.html',
   styleUrls: ['./visualizarprodutos.component.css']
 })
+
 export class VisualizarprodutosComponent implements OnInit {
-  produtos$: Produto[];
+  displayedColumns: string[] = ['id', 'nome', 'valor', 'delete'];
+  ELEMENT_DATA: Produto[];
+  dataSource = new MatTableDataSource<Produto>(this.ELEMENT_DATA);
 
-  constructor(private datasService: DataService) { 
+  constructor(private datasService: DataService) {
+  }
 
+  public getProdutos() {
+    let resp = this.datasService.getProdutos();
+    resp.subscribe(data => this.dataSource.data = data as Produto[])
+  }
 
+  public deleteProdutos() {
+    // let resp = this.datasService.deleteProduto();
   }
 
   ngOnInit() {
-    return this.datasService.getProdutos()
-    .subscribe(data=> this.produtos$ = data);
-
-    //this.datasService.getProdutos().subscribe(console.log);
+    this.getProdutos();
   }
+
 
 }
