@@ -1,24 +1,24 @@
 <mat-grid-list cols="1" rowHeight="10:1">
 
-    <mat-grid-tile>
+  <mat-grid-tile>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Nome</mat-label>
-        <input matInput>
-      </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome</mat-label>
+      <input type="text" matInput [(ngModel)]="nome">
+    </mat-form-field>
 
-    </mat-grid-tile>
+  </mat-grid-tile>
 
-    <mat-grid-tile>
+  <mat-grid-tile>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Valor</mat-label>
-        <input matInput>
-      </mat-form-field>
-    </mat-grid-tile>
+    <mat-form-field class="example-full-width">
+      <mat-label>Valor</mat-label>
+      <input type="number" matInput [(ngModel)]="valor">
+    </mat-form-field>
+  </mat-grid-tile>
 
-    <mat-grid-tile>
-      <button mat-raised-button color="primary">Cadastrar</button>
-    </mat-grid-tile>
-
-  </mat-grid-list>
+  <mat-grid-tile>
+    <button mat-raised-button color="primary" (click)="createProduto(nome,valor)">Cadastrar</button>
+  </mat-grid-tile>
+  
+</mat-grid-list>

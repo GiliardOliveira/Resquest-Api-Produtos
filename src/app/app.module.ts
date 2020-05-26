@@ -26,6 +26,7 @@ import { VisualizarprodutosComponent } from './componentes/visualizarprodutos/vi
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './services/data.service';
 import {MatTableModule} from '@angular/material/table';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -41,6 +42,8 @@ import {MatTableModule} from '@angular/material/table';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     //API CONECT
     HttpClientModule,
 
