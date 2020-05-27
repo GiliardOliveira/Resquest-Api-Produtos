@@ -1,0 +1,21 @@
+<mat-list role="list">
+  <mat-list-item role="listitem"> Nome: {{produto.nome}}</mat-list-item>
+  <mat-list-item role="listitem"> Valor: {{produto.valor}}</mat-list-item>
+</mat-list>
+
+
+
+<mat-grid-list cols="1" rowHeight="10:1">
+
+  <mat-grid-tile>
+    <mat-form-field class="example-full-width">
+      <mat-label>ID</mat-label>
+      <input type="text" matInput [(ngModel)]="id">
+    </mat-form-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <button mat-raised-button color="primary" (click)="getProduto(id)">Consultar</button>
+  </mat-grid-tile>
+
+</mat-grid-list>

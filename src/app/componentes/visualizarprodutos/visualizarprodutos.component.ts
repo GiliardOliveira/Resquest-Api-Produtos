@@ -11,7 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 
 export class VisualizarprodutosComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'nome', 'valor', 'delete'];
+  displayedColumns: string[] = ['id', 'nome', 'valor', 'delete', 'editar'];
   ELEMENT_DATA: Produto[];
   dataSource = new MatTableDataSource<Produto>(this.ELEMENT_DATA);
 
@@ -29,11 +29,16 @@ export class VisualizarprodutosComponent implements OnInit {
   }
 
   public delete(element: Produto) {
+    this.getProdutos()
 
+    this.remover(element)
+
+  }
+
+  public remover(element: Produto) {
     let resp = this.datasService.deleteProduto(element);
     resp.subscribe(data => this.dataSource.data = data as Produto[])
-    return this.getProdutos()
-
+    this.getProdutos()
   }
 
 

@@ -25,9 +25,10 @@ import { MatListModule } from '@angular/material/list';
 import { VisualizarprodutosComponent } from './componentes/visualizarprodutos/visualizarprodutos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './services/data.service';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
-
+import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
+import { ConsultaProdutoComponent } from './componentes/consulta-produto/consulta-produto.component';
 
 
 
@@ -36,7 +37,9 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
     AppComponent,
     CadastrarprodutoComponent,
     RootNavComponent,
-    VisualizarprodutosComponent
+    VisualizarprodutosComponent,
+    EditarProdutoComponent,
+    ConsultaProdutoComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,7 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
     LayoutModule,
     MatIconModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent],

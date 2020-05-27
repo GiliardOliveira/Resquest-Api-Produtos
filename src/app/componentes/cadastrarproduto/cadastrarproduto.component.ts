@@ -22,15 +22,13 @@ export class CadastrarprodutoComponent implements OnInit {
       "nome": nome,
       "valor": valor
     }
-   
+
     this.postProdutos(produto)
   }
-
 
   public postProdutos(np: Produto) {
     this.datasService.postProdutos(np).subscribe()
   }
-
 
   ngOnInit(): void {
 
