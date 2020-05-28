@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
 ## initialize 
-run `npm install` for install depencies node_modules
+Run `npm install` for install depencies node_modules
 
 ## Development server
 
