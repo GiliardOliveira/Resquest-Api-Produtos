@@ -18,27 +18,22 @@ export class VisualizarprodutosComponent implements OnInit {
   constructor(private datasService: DataService) {
   }
 
-  public getProdutos() {
-    let resp = this.datasService.getProdutos();
-    resp.subscribe(data => this.dataSource.data = data as Produto[])
 
-  }
 
   ngOnInit() {
     this.getProdutos()
   }
 
-  public delete(element: Produto) {
-    this.getProdutos()
-
-    this.remover(element)
-
+  public delete(id: number) {
+    let resp = this.datasService.deleteProduto(id);
+    resp.subscribe(data => this.dataSource.data = data as Produto[])
+    document.location.reload(true);
   }
 
-  public remover(element: Produto) {
-    let resp = this.datasService.deleteProduto(element);
+  public getProdutos() {
+    let resp = this.datasService.getProdutos();
     resp.subscribe(data => this.dataSource.data = data as Produto[])
-    this.getProdutos()
+
   }
 
 

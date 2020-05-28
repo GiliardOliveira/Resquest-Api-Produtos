@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>ID</th>
@@ -18,7 +18,7 @@
   <ng-container matColumnDef="delete">
     <th mat-header-cell *matHeaderCellDef>DELETE</th>
     <td mat-cell *matCellDef="let element">
-      <button mat-raised-button color="warn" (click)="delete(element)">Delete</button>
+      <button mat-raised-button color="warn" (click)="delete(element.id)">Delete</button>
     </td>
   </ng-container>
 

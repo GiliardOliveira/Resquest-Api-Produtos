@@ -22,8 +22,8 @@ export class DataService {
     return this.http.get<Produto[]>(this.apiUrl);
   }
 
-  public deleteProduto(produto: Produto): Observable<{}> {
-    return this.http.request('DELETE', this.apiUrl, { body: produto });
+  public deleteProduto(id: number): Observable<{}> {
+    return this.http.delete(this.apiUrl + "/" + id);
   }
 
   public getByIdProduto(id: number) {

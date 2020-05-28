@@ -18,12 +18,18 @@ export class ConsultaProdutoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
   getProduto(id: number) {
+    
     this.datasService.getByIdProduto(id).subscribe((produto: Produto) => {
-      this.produto = produto;
+      if (produto == null) {
+        document.location.reload(true);
+      } else {
+        this.produto = produto;
+      }
     })
   }
+
 
 
 }
